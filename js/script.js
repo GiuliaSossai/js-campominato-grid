@@ -21,16 +21,17 @@ play.addEventListener('click', function(){
   container.classList.add('active');
   console.log(container);
 
+  //creo la griglia in base alla difficoltà scelta
   let difficoltàScelta = parseInt(level.value);
+  console.log(difficoltàScelta);
   let dimension;
 
-  //creo la griglia in base alla difficoltà scelta
   if (difficoltàScelta === 1){
-    dimension === 100;
+    dimension = 100;
   } else if (difficoltàScelta === 2){
-    dimension === 81;
+    dimension = 81;
   } else {
-    dimension === 49;
+    dimension = 49;
   }
 
   for (let i = 0; i < dimension; i++){
