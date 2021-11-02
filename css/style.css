@@ -13,6 +13,9 @@ header {
 
 main {
   height: calc(100vh - 180px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(134, 243, 181);
 }
 
@@ -39,4 +42,39 @@ img {
 
 #difficult {
   margin: 0 20px;
+}
+
+#difficult, button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+}
+
+.square {
+  float: left;
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square.easy {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+
+.square.hard {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+
+.square.crazy {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
 }
