@@ -55,6 +55,12 @@ img {
   background-color: white;
 }
 
+.default-text {
+  text-align: center;
+  font-size: 30px;
+  display: none;
+}
+
 .square {
   float: left;
   border: 1px solid black;

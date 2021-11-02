@@ -8,18 +8,17 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
  */
 
 const container = document.querySelector('.container');
-
-const listNumbers = [];
 init ();
+
 
 function init(){
   for (let i = 0; i < 100; i++){
     //creo ogni volta l'elemento square e lo aggiugno al container - con funzione
   
-    const sq = createSquare(container);
+    const mySquare = createSquare(container);
   
     //gestisco comportamento - aggiungo colore sfondo al click
-    sq.addEventListener('click',function(){
+    mySquare.addEventListener('click',function(){
       console.log(this);
       this.classList.add('clicked');
   
@@ -35,12 +34,12 @@ function init(){
  */
  function createSquare(target){
    //creo elemento div
-  const sq = document.createElement('div');
+  const mySquare = document.createElement('div');
   //aggiungo classi a div
   const classes = ['square', 'easy' ]
-  sq.classList.add(...classes);
+  mySquare.classList.add(...classes);
   //appendo il div al suo contenitore
-  target.append(sq);
+  target.append(mySquare);
   //ottengo il quadrato
-  return sq;
+  return mySquare;
 }
