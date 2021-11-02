@@ -3,41 +3,61 @@
  * poi devo selezionare una difficoltà
  * al click su play allora genero la griglia in base alla difficoltà che ho impostato
  */
-
 const container = document.querySelector('.gs-container');
+console.log(container);
 
-init ();
+// init();
 
-let select = document.getElementById('difficult');
-//let value = select.options[select.selectedIndex].value;
+const level = document.querySelector('.form-select');
+
+let difficoltàScelta = parseInt(level.value);
+
 
 const play = document.querySelector('.btn');
 console.log(play);
 
+const text = document.querySelector('.default-text');
+console.log(text);
+
 play.addEventListener('click', function(){
   //premo play e la scritta va in display none e la griglia va in display block
+
+  text.classList.add('disabled');
+  console.log(text);
+  container.classList.add('active');
+  console.log(container);
+
+  
+
+  if (difficoltàScelta === 1){
+    for (let i = 0; i < 100; i++){
+      const mySquare = createSquare(container);
+      mySquare.innerHTML = [i + 1];
+      mySquare.addEventListener('click',function(){
+        this.classList.add('clicked');
+      });
+    }
+  }else if (difficoltàScelta === 2){
+    for (let i = 0; i < 81; i++){
+      createSquare(container);
+      mySquare.innerHTML = [i + 1];
+      mySquare.addEventListener('click',function(){
+        this.classList.add('clicked');
+      });
+    }
+  } else {
+    for (let i = 0; i < 49; i++){
+      createSquare(container);
+      mySquare.innerHTML = [i + 1];
+      mySquare.addEventListener('click',function(){
+        this.classList.add('clicked');
+      });
+    }
+  }
 
 
 })
 
-
-function init(){
-  for (let i = 0; i < 100; i++){
-    //creo ogni volta l'elemento square e lo aggiugno al container - con funzione
-    const mySquare = createSquare(container);
-
-    //inserisco numero
-    mySquare.innerHTML = [i + 1];
-  
-    //gestisco comportamento - aggiungo colore sfondo al click
-    mySquare.addEventListener('click',function(){
-      console.log(this);
-      this.classList.add('clicked');
-  
-    });
-  }
-
-};
 
 /**
  * generatore di square
@@ -48,10 +68,17 @@ function init(){
    //creo elemento div
   const mySquare = document.createElement('div');
 
-  //aggiungo classi a div
-  const classes = ['square', 'easy' ]
-  mySquare.classList.add(...classes);
-
+  //aggiungo classi a div a seconda della difficoltà
+  if (difficoltàScelta === 1){
+    mySquare.classList.add('square','easy');
+  }
+  if (difficoltàScelta === 2){
+    mySquare.classList.add('square','hard');
+  }
+  if (difficoltàScelta === 3){
+    mySquare.classList.add('square','crazy');
+  }
+  
   //appendo il div al suo contenitore
   target.append(mySquare);
   //ottengo il quadrato
