@@ -6,29 +6,15 @@
 
 header {
   height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
 }
 
 main {
-  height: calc(100vh - 180px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: calc(100vh - 150px);
   background-color: rgb(134, 243, 181);
 }
 
 footer {
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-left, .header-right {
-  display: flex;
-  align-items: center;
+  height: 50px;
 }
 
 .logo-image {
@@ -45,20 +31,20 @@ img {
 }
 
 #difficult, button {
-  padding: 5px 10px;
+  
   cursor: pointer;
 }
 
-.container {
+.gs-container {
   width: 500px;
   height: 500px;
   background-color: white;
 }
 
 .default-text {
-  text-align: center;
+  
   font-size: 30px;
-  display: none;
+  
 }
 
 .square {

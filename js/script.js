@@ -7,15 +7,16 @@ con difficoltà 3 => tra 1 e 49
 Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
  */
 
-const container = document.querySelector('.container');
+const container = document.querySelector('.gs-container');
+const listNumbers  = [];
 init ();
 
-
 function init(){
-  for (let i = 0; i < 100; i++){
+  for (let i = 1; i < 101; i++){
     //creo ogni volta l'elemento square e lo aggiugno al container - con funzione
-  
+    
     const mySquare = createSquare(container);
+    mySquare.innerHTML = [i];
   
     //gestisco comportamento - aggiungo colore sfondo al click
     mySquare.addEventListener('click',function(){
@@ -35,11 +36,19 @@ function init(){
  function createSquare(target){
    //creo elemento div
   const mySquare = document.createElement('div');
+
   //aggiungo classi a div
   const classes = ['square', 'easy' ]
   mySquare.classList.add(...classes);
+
   //appendo il div al suo contenitore
   target.append(mySquare);
   //ottengo il quadrato
   return mySquare;
+}
+
+
+//genero numeri
+function generateRandomNum (min, max){
+  return Math.floor(Math.random() * (max-min +1) +min);
 }
