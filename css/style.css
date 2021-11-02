@@ -30,21 +30,22 @@ img {
   margin: 0 20px;
 }
 
-#difficult, button {
-  
-  cursor: pointer;
-}
-
 .gs-container {
   width: 500px;
   height: 500px;
   background-color: white;
 }
 
+.gs-container.gs-block {
+  display: block;
+}
+
 .default-text {
-  
   font-size: 30px;
-  
+}
+
+.default-text.gs-none {
+  display: none;
 }
 
 .square {

@@ -1,22 +1,33 @@
 /**
- * Consegna
-L’utente indica un livello di difficoltà in base al quale viene generata una griglia di gioco quadrata, in cui ogni cella contiene un numero tra quelli compresi in un range:
-con difficoltà 1 => tra 1 e 100
-con difficoltà 2 => tra 1 e 81
-con difficoltà 3 => tra 1 e 49
-Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
+ * di default quando apro la pagina vedo la scritta
+ * poi devo selezionare una difficoltà
+ * al click su play allora genero la griglia in base alla difficoltà che ho impostato
  */
 
 const container = document.querySelector('.gs-container');
-const listNumbers  = [];
+
 init ();
 
+let select = document.getElementById('difficult');
+//let value = select.options[select.selectedIndex].value;
+
+const play = document.querySelector('.btn');
+console.log(play);
+
+play.addEventListener('click', function(){
+  //premo play e la scritta va in display none e la griglia va in display block
+
+
+})
+
+
 function init(){
-  for (let i = 1; i < 101; i++){
+  for (let i = 0; i < 100; i++){
     //creo ogni volta l'elemento square e lo aggiugno al container - con funzione
-    
     const mySquare = createSquare(container);
-    mySquare.innerHTML = [i];
+
+    //inserisco numero
+    mySquare.innerHTML = [i + 1];
   
     //gestisco comportamento - aggiungo colore sfondo al click
     mySquare.addEventListener('click',function(){
@@ -45,10 +56,4 @@ function init(){
   target.append(mySquare);
   //ottengo il quadrato
   return mySquare;
-}
-
-
-//genero numeri
-function generateRandomNum (min, max){
-  return Math.floor(Math.random() * (max-min +1) +min);
 }
