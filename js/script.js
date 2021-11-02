@@ -14,11 +14,12 @@ console.log(text);
 
 const level = document.querySelector('.form-select');
 
+
 play.addEventListener('click', function(){
   //premo play e la scritta va in display none e la griglia va in display block
   text.classList.add('disabled');
   console.log(text);
-  container.classList.add('active');
+  container.classList.add('active'); //dovrebbe essere display block solo la griglia selezionata
   console.log(container);
 
   //creo la griglia in base alla difficoltà scelta
