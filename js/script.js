@@ -22,37 +22,24 @@ play.addEventListener('click', function(){
   console.log(container);
 
   let difficoltàScelta = parseInt(level.value);
-  //let dimension = '';
+  let dimension;
 
   //creo la griglia in base alla difficoltà scelta
   if (difficoltàScelta === 1){
-    for (let i = 0; i < 100; i++){
-      const mySquare = createSquare(container);
-      mySquare.innerHTML = [i + 1];
-      mySquare.addEventListener('click',function(){
-        this.classList.add('clicked');
-      });
-    }
+    dimension === 100;
   } else if (difficoltàScelta === 2){
-    for (let i = 0; i < 81; i++){
-      
-      const mySquare = createSquare(container);
-      mySquare.innerHTML = [i + 1];
-      mySquare.addEventListener('click',function(){
-        this.classList.add('clicked');
-      });
-    }
+    dimension === 81;
   } else {
-    for (let i = 0; i < 49; i++){
-      
-      const mySquare = createSquare(container);
-      mySquare.innerHTML = [i + 1];
-      mySquare.addEventListener('click',function(){
-        this.classList.add('clicked');
-      });
-    }
+    dimension === 49;
   }
 
+  for (let i = 0; i < dimension; i++){
+    const mySquare = createSquare(container);
+    mySquare.innerHTML = [i + 1];
+    mySquare.addEventListener('click',function(){
+      this.classList.add('clicked');
+    });
+  }
 
 })
 
