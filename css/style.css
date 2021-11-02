@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  height: calc(100vh - 180px);
+  background-color: rgb(134, 243, 181);
+}
+
+footer {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 60px;
+  margin-right: 20px;
+}
+
+img {
+  width: 100%;
+}
+
+#difficult {
+  margin: 0 20px;
+}
